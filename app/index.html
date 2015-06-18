@@ -39,32 +39,32 @@
         
         <div>
             <ol class="modal__steps">
-                <li class="modal__steps__item--active">Definition</li>
-                <li class="modal__steps__item">Images</li>
-                <li class="modal__steps__item">Users</li>
-                <li class="modal__steps__item">Summary</li>
+                <li class="modal__steps__item--active">1. Definition</li>
+                <li class="modal__steps__item">2. Images</li>
+                <li class="modal__steps__item">3. Users</li>
+                <li class="modal__steps__item">4. Summary</li>
             </ol>
         </div>
 
         <form class="" action="" method="">
-        <div>
-            <label for="vmtype">VM Type <span class="required"></span></label>
+
+        <div class="section__vmType">
+            <h4 class="section__vmType__header"><span class="required"></span>VM Type:</h4>
             <input type="radio" name="vmtype" id="dedicated" value="dedicated" class="hidden"> 
-            <label for="dedicated" class="type--dedicated">Dedicated</label>
+            <label for="dedicated" class="section__vmType__details--dedicated"><span class="section__vmType__name">Dedicated</span></label>
 
             <input type="radio" name="vmtype" id="floating" value="floating" class="hidden">
-            <label for="floating" class="type--floating">Floating</label>
+            <label for="floating" class="section__vmType__details--floating"><span class="section__vmType__name">Floating</span></label>
 
             <input type="radio" name="vmtype" id="session" value="session" class="hidden">
-            <label for="session" class="type--session">Session</label>
+            <label for="session" class="section__vmType__details--session"><span class="section__vmType__name">Session</span></label>
         </div>
 
-            <h3 class="modal__sub-header">Fixed Attributes</h3>
-
-        <div>
-            <label for="dataCenter">Data Center</label>
-            <div class="form-select">
-                <select id="dataCenter" class="custom-select" name="city">
+        <h3 class="modal__sub-header">Fixed Attributes</h3>
+        <div class="section__form">
+            <label class="section__form__header" for="dataCenter">Data Center</label>
+            <div class="section__form__select">
+                <select id="dataCenter" name="city">
                     <option value="sanFrancisco">San Francisco</option>
                     <option value="newYork">New York</option>
                     <option value="seattle">Seattle</option>
@@ -73,21 +73,21 @@
             </div>
         </div>
 
-        <div>
-            <label for="desktopModel">Desktop Model</label>
-            <div class="form-select">
-                <select id="desktopModel" class="custom-select" name="model">
-                    <option value="standard">Standard <span>(2Gb Memory, 1 CPU)</span></option>
-                    <option value="turbo">Turbo <span>(4Gb Memory, 2 CPU)</span></option>
-                    <option value="twinTurbo">Twin Turbo <span>(8Gb Memory, 2.8 CPU)</span></option>
+        <div class="section__form">
+            <label class="section__form__header" for="desktopModel">Desktop Model</label>
+            <div class="section__form__select">
+                <select id="desktopModel" name="model">
+                    <option value="standard">Standard <i class="muted">(2Gb Memory, 1 CPU)</i></option>
+                    <option value="turbo">Turbo <span class="muted">(4Gb Memory, 2 CPU)</span></option>
+                    <option value="twinTurbo">Twin Turbo <span class="muted">(8Gb Memory, 2.8 CPU)</span></option>
                 </select>
             </div>
         </div>    
 
-        <div>
-            <label for="domain">Domain</label>
-            <div class="form-select">
-                <select id="domain" class="custom-select" name="domain">
+        <div class="section__form">
+            <label class="section__form__header" for="domain">Domain</label>
+            <div class="section__form__select">
+                <select id="domain" name="domain">
                     <option value="domainAlfa">Domain Alfa</option>
                     <option value="domainKilo">Domain Kilo</option>
                     <option value="domainZulu">Domain Zulu</option>
@@ -95,8 +95,8 @@
             </div>
         </div>
 
-        <div>
-            <label for="joinDomain">Join Domain</label>
+        <div class="section__form">
+            <label class="section__form__header" for="joinDomain">Join Domain</label>
             <!-- <div class="switch">
                 <input type="radio" class="switch-input" name="joinDomain" value="joinDomainNo" id="joinDomainNo" checked>
                 <label for="joinDomainNo" class="switch-label switch-label-off">Yes</label>
@@ -105,14 +105,15 @@
                 <label for="joinDomainYes" class="switch-label switch-label-on">No</label>
                 <span class="switch-selection"></span>
             </div> -->
+            <div class="section__form__select">
+                <div class="switch--off">
+                    <input type="radio" class="switch-input" name="view" value="week" id="week" checked>
+                    <label for="week" class="switch-label switch-label-off">Yes</label>
 
-             <div class="switch--off">
-                <input type="radio" class="switch-input" name="view" value="week" id="week" checked>
-                <label for="week" class="switch-label switch-label-off">Yes</label>
-
-                <input type="radio" class="switch-input" name="view" value="month" id="month">
-                <label for="month" class="switch-label switch-label-on">No</label>
-                <span class="switch-selection"></span>
+                    <input type="radio" class="switch-input" name="view" value="month" id="month">
+                    <label for="month" class="switch-label switch-label-on">No</label>
+                    <span class="switch-selection"></span>
+                </div>
             </div>
         </div>   
            
@@ -139,13 +140,10 @@
 
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-        <script src="bower_components/jquery.selectBoxIt/src/javascripts/jquery.selectBoxIt.js"></script>
+        <script src="bower_components/simple-select/jquery.simpleselect.js"></script>
         <script src="scripts/main.js"></script>
         <script>
-            $(function() {
-                var selectBox = $('.custom-select').selectBoxIt();
-            });
+            $("select").simpleSelect();
         </script>
 
         <!-- endbuild -->
