@@ -1,8 +1,122 @@
-<!DOCTYPE html> <html class=no-js> <head> <meta charset=utf-8> <title>vmware</title> <meta name=description content=""> <meta name=viewport content="width=device-width"> <link rel="shortcut icon" href=/6df2b309.favicon.ico> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel=stylesheet href=styles/db4badba.main.css> <script src=scripts/vendor/1cb556bb.modernizr.js></script>  <body> <!--[if lt IE 10]>
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>vmware</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/6df2b309.favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/092e60ca.main.css">
+    <script src="scripts/vendor/1cb556bb.modernizr.js"></script>
+
+  </head>
+  <body>
+    <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]--> <div class=hero-unit> <h1>'Allo, 'Allo!</h1> <p>You now have</p> <ul> <li>HTML5 Boilerplate</li> <li>Sass</li> <li>Modernizr</li> </ul> </div> <script src=scripts/80c20305.vendor.js></script> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --> <script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');</script> <script src=scripts/b6c3df09.main.js></script>  
+    <![endif]-->
+
+
+<label class="btn--hero" for="modal-1">Jump start modal from here</label>
+
+<input class="modal-state" id="modal-1" type="checkbox" />
+<div class="modal">
+    <label class="modal__bg" for="modal-1"></label>
+    <div class="modal__inner">
+        <label class="modal__close" for="modal-1"></label>
+        <h2 class="modal__main-header">Assign Desktops</h2>
+        
+        <div>
+            <ol class="modal__steps">
+                <li class="modal__steps__item--active">1. Definition</li>
+                <li class="modal__steps__item">2. Images</li>
+                <li class="modal__steps__item">3. Users</li>
+                <li class="modal__steps__item">4. Summary</li>
+            </ol>
+        </div>
+
+        <form class="" action="" method="">
+
+            <div class="section__vmType">
+                <h4 class="section__vmType__header"><span class="required"></span>VM Type:</h4>
+                <input type="radio" name="vmtype" id="dedicated" value="dedicated" class="hidden"> 
+                <label for="dedicated" class="section__vmType__details--dedicated"><span class="section__vmType__name">Dedicated</span></label>
+
+                <input type="radio" name="vmtype" id="floating" value="floating" class="hidden">
+                <label for="floating" class="section__vmType__details--floating"><span class="section__vmType__name">Floating</span></label>
+
+                <input type="radio" name="vmtype" id="session" value="session" class="hidden">
+                <label for="session" class="section__vmType__details--session"><span class="section__vmType__name">Session</span></label>
+            </div>
+
+            <h3 class="modal__sub-header">Fixed Attributes</h3>
+            <div class="section__form">
+                <label class="section__form__header" for="dataCenter">Data Center:</label>
+                <div class="section__form__select">
+                    <select id="dataCenter" name="city">
+                        <option value="sanFrancisco">San Francisco</option>
+                        <option value="newYork">New York</option>
+                        <option value="seattle">Seattle</option>
+                        <option value="portland">Portland</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section__form">
+                <label class="section__form__header" for="desktopModel">Desktop Model:</label>
+                <div class="section__form__select">
+                    <select id="desktopModel" name="model">
+                        <option value="standard">Standard <i class="muted">(2Gb Memory, 1 CPU)</i></option>
+                        <option value="turbo">Turbo <span class="muted">(4Gb Memory, 2 CPU)</span></option>
+                        <option value="twinTurbo">Twin Turbo <span class="muted">(8Gb Memory, 2.8 CPU)</span></option>
+                    </select>
+                </div>
+            </div>    
+
+            <div class="section__form">
+                <label class="section__form__header" for="domain">Domain:</label>
+                <div class="section__form__select">
+                    <select id="domain" name="domain">
+                        <option value="domainAlfa">Domain Alfa</option>
+                        <option value="domainKilo">Domain Kilo</option>
+                        <option value="domainZulu">Domain Zulu</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section__form">
+                <label class="section__form__header" for="joinDomain">Join Domain:</label>
+                <div class="section__form__select">
+                    <div class="switch">
+                        <input type="radio" class="switch-input" name="joinDomain" value="joinDomainYes" id="joinDomainYes" checked>
+                        <label for="joinDomainYes" class="switch-label switch-label-off">Yes</label>
+
+                        <input type="radio" class="switch-input" name="joinDomain" value="joinDomainNo" id="joinDomainNo">
+                        <label for="joinDomainNo" class="switch-label switch-label-on">No</label>
+                        <span class="switch-selection"></span>
+                    </div>
+                </div>
+            </div>   
+           
+            <div class="section__form__actions">
+                <button type="reset" value="Cancel" class="btn--disabled" disabled>Cancel</button>
+                <span class="to-right">
+                    <button type="submit" value="Save" class="btn">Save</button>
+                    <a href="javascript:void(0)" class="btn">< Back</a>
+                    <a href="javascript:void(0)" class="btn btn--disabled">Next ></a>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+    <script src="scripts/80c20305.vendor.js"></script>
+
+
+        <script src="scripts/839d9478.main.js"></script>
+</body>
+</html>
