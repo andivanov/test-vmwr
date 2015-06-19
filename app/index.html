@@ -25,10 +25,7 @@
     <![endif]-->
 
 
-<h1>Page header</h1>
-<p>Page copy</p>
-
-<label class="btn" for="modal-1">Show me modal with a cat</label>
+<label class="btn--hero" for="modal-1">Jump start modal from here</label>
 
 <input class="modal-state" id="modal-1" type="checkbox" />
 <div class="modal">
@@ -97,21 +94,13 @@
 
             <div class="section__form">
                 <label class="section__form__header" for="joinDomain">Join Domain:</label>
-                <!-- <div class="switch">
-                    <input type="radio" class="switch-input" name="joinDomain" value="joinDomainNo" id="joinDomainNo" checked>
-                    <label for="joinDomainNo" class="switch-label switch-label-off">Yes</label>
-
-                    <input type="radio" class="switch-input" name="joinDomain" value="joinDomainYes" id="joinDomainYes">
-                    <label for="joinDomainYes" class="switch-label switch-label-on">No</label>
-                    <span class="switch-selection"></span>
-                </div> -->
                 <div class="section__form__select">
-                    <div class="switch--off">
-                        <input type="radio" class="switch-input" name="view" value="week" id="week" checked>
-                        <label for="week" class="switch-label switch-label-off">Yes</label>
+                    <div class="switch">
+                        <input type="radio" class="switch-input" name="joinDomain" value="joinDomainYes" id="joinDomainYes" checked>
+                        <label for="joinDomainYes" class="switch-label switch-label-off">Yes</label>
 
-                        <input type="radio" class="switch-input" name="view" value="month" id="month">
-                        <label for="month" class="switch-label switch-label-on">No</label>
+                        <input type="radio" class="switch-input" name="joinDomain" value="joinDomainNo" id="joinDomainNo">
+                        <label for="joinDomainNo" class="switch-label switch-label-on">No</label>
                         <span class="switch-selection"></span>
                     </div>
                 </div>
@@ -122,7 +111,7 @@
                 <span class="to-right">
                     <button type="submit" value="Save" class="btn">Save</button>
                     <a href="javascript:void(0)" class="btn">< Back</a>
-                    <a href="javascript:void(0)" class="btn">Next ></a>
+                    <a href="javascript:void(0)" class="btn btn--disabled">Next ></a>
                 </span>
             </div>
         </form>

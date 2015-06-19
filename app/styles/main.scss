@@ -54,7 +54,7 @@ body {
     line-height: 1;
     text-decoration: none;
     @include border-radius(3px);
-    @include transition(all 0.1s ease-in-out);
+    @include transition(all 0.05s ease-in-out);
     &:hover,
     &:focus {
         background: #6CB33E;
@@ -63,17 +63,26 @@ body {
     }
     &:active {
         background: #6CB33E;
-        box-shadow: 0 1px 2px rgba(0,0,0, .2) inset;
+        @include box-shadow($button-box-shadow);
+        @include text-shadow($button-text-shadow);
+        //text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
     }
     &--disabled {
         @extend .btn;
         background: #DEE2E7;
         border-color: #E6E9ED;
         color: #414A55;
-        cursor: disabled;
+        cursor: not-allowed;
         &:hover {
             @extend .btn--disabled;
         }
+    }
+    &--hero {
+        @extend .btn;
+        display: table;
+        margin: 40vh auto 0;
+        padding: 20px 30px;
+        text-transform: uppercase;
     }
 }
 
@@ -211,7 +220,7 @@ input[type=radio]:checked + label.section__vmType__details {
         left: 2px;
         z-index: -1;
         @include border-radius(50%);
-        @include box-shadow(0 0 8px rgba(109, 179, 63, 0.8));
+        @include box-shadow(0 0 4px rgba(109, 179, 63, 0.5));
     }
     .section__vmType__name {
         color: $copy-color-dark;
@@ -236,7 +245,7 @@ input[type=radio]:checked + label.section__vmType__details {
             color: #697785;
             text-indent: 26px;
             vertical-align: top;
-            line-height: 25px;
+            line-height: $select-box-height - 2px; //border
         }
         &__select {
             width: 300px;
@@ -315,6 +324,7 @@ input[type=radio]:checked + label.section__vmType__details {
   padding: 16px 30px 20px;
   height: 540px;
   width: 722px;
+  @include box-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 
 .modal__close {

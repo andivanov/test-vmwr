@@ -5,11 +5,10 @@
 
     &.opened {
         .selectbox__display {
-            border-bottom: 0 none;
             padding-bottom: 1px;
 
             &:hover {
-                background: #edecec;
+                background: #6DB33E;
             }
         }
 
@@ -24,14 +23,14 @@
     }
 
     .selectbox__display {
-        //width: $select-width;
         border: 1px solid #B3BCC6;
         background: #ffffff;
         cursor: pointer;
         overflow: hidden;
         position: relative;
-        height: 25px;
+        height: $select-box-height;
         @include border-radius(3px);
+        @include transition(all 0.1s ease-in-out);
         &:after {
             content: "";
             position: absolute;
@@ -56,6 +55,12 @@
             &:after {
                 border-color: #fff;
             }
+             &:active {
+                @include box-shadow($button-box-shadow);
+            }
+        }
+        &:active {
+            @include box-shadow($button-box-shadow);
         }
     }
 
@@ -65,7 +70,7 @@
 
     .selectbox__title-text {
         font-size: 14px;
-        line-height: 25px;
+        line-height: $select-box-height - 2px; //border
         color: $copy-color-dark;
         padding-left: 11px;
         white-space: nowrap;
@@ -74,9 +79,7 @@
     }
 
     .selectbox__display-btn {
-        //width: $select-btn-width;
         float: left;
-        //height: $select-height;
         background: transparent;
         top: 0;
         right: 0;
@@ -95,9 +98,7 @@
         left: 0px;
         right: 0px;
         background: #ffffff;
-        border: 1px solid #bdbdbd;
-        border-top: 0 none;
-        
+        border: 1px solid #B1C0CC;
         overflow: hidden;
         display: none;
         z-index: 1000;
@@ -106,22 +107,23 @@
     .selectbox__dropdown-item {
         &.selected {
             .selectbox__item-link {
-                background: #edecec;
+                background: #fff;
+                &:hover {
+                    background: #DAEBCF;
+                }
             }
         }
     }
 
     .selectbox__item-link {
-        font-size: 12px;
-        line-height: 14px;
-        color: #686868;
+        font-size: 14px;
+        line-height: 2;
+        color: #414A55;
         padding-left: 13px;
-        padding-top: 5px;
-        padding-bottom: 5px;
         cursor: pointer;
         display: block;
         &:hover {
-            background: #edecec;
+            background: #DAEBCF;
         }
     }
 }
