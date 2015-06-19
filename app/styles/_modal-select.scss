@@ -25,25 +25,49 @@
 
     .selectbox__display {
         //width: $select-width;
-        border: 1px solid #bdbdbd;
+        border: 1px solid #B3BCC6;
         background: #ffffff;
         cursor: pointer;
         overflow: hidden;
         position: relative;
+        height: 25px;
+        @include border-radius(3px);
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 6px;
+            height: 6px;
+            border: 1px solid;
+            border-color: #80878A;
+            border-left: none;
+            border-bottom: none;
+            right: 10px;
+            top: 50%;
+            margin-top: -3px;
+            @include rotate(135deg);
+        }
+        &:hover {
+            border-color: #B9DAA7;
+            background: #6CB33E;
+            .selectbox__title-text {
+                color: #fff;
+            }
+            &:after {
+                border-color: #fff;
+            }
+        }
     }
 
     .selectbox__display-title {
         float: left;
-        //width: $select-width - $select-btn-width - 5;
-
     }
 
     .selectbox__title-text {
-        font-size: 12px;
-        //line-height: $select-height;
-        color: #686868;
+        font-size: 14px;
+        line-height: 25px;
+        color: $copy-color-dark;
         padding-left: 11px;
-        //height: $select-height;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;

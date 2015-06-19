@@ -48,83 +48,83 @@
 
         <form class="" action="" method="">
 
-        <div class="section__vmType">
-            <h4 class="section__vmType__header"><span class="required"></span>VM Type:</h4>
-            <input type="radio" name="vmtype" id="dedicated" value="dedicated" class="hidden"> 
-            <label for="dedicated" class="section__vmType__details--dedicated"><span class="section__vmType__name">Dedicated</span></label>
+            <div class="section__vmType">
+                <h4 class="section__vmType__header"><span class="required"></span>VM Type:</h4>
+                <input type="radio" name="vmtype" id="dedicated" value="dedicated" class="hidden"> 
+                <label for="dedicated" class="section__vmType__details--dedicated"><span class="section__vmType__name">Dedicated</span></label>
 
-            <input type="radio" name="vmtype" id="floating" value="floating" class="hidden">
-            <label for="floating" class="section__vmType__details--floating"><span class="section__vmType__name">Floating</span></label>
+                <input type="radio" name="vmtype" id="floating" value="floating" class="hidden">
+                <label for="floating" class="section__vmType__details--floating"><span class="section__vmType__name">Floating</span></label>
 
-            <input type="radio" name="vmtype" id="session" value="session" class="hidden">
-            <label for="session" class="section__vmType__details--session"><span class="section__vmType__name">Session</span></label>
-        </div>
-
-        <h3 class="modal__sub-header">Fixed Attributes</h3>
-        <div class="section__form">
-            <label class="section__form__header" for="dataCenter">Data Center</label>
-            <div class="section__form__select">
-                <select id="dataCenter" name="city">
-                    <option value="sanFrancisco">San Francisco</option>
-                    <option value="newYork">New York</option>
-                    <option value="seattle">Seattle</option>
-                    <option value="portland">Portland</option>
-                </select>
+                <input type="radio" name="vmtype" id="session" value="session" class="hidden">
+                <label for="session" class="section__vmType__details--session"><span class="section__vmType__name">Session</span></label>
             </div>
-        </div>
 
-        <div class="section__form">
-            <label class="section__form__header" for="desktopModel">Desktop Model</label>
-            <div class="section__form__select">
-                <select id="desktopModel" name="model">
-                    <option value="standard">Standard <i class="muted">(2Gb Memory, 1 CPU)</i></option>
-                    <option value="turbo">Turbo <span class="muted">(4Gb Memory, 2 CPU)</span></option>
-                    <option value="twinTurbo">Twin Turbo <span class="muted">(8Gb Memory, 2.8 CPU)</span></option>
-                </select>
-            </div>
-        </div>    
-
-        <div class="section__form">
-            <label class="section__form__header" for="domain">Domain</label>
-            <div class="section__form__select">
-                <select id="domain" name="domain">
-                    <option value="domainAlfa">Domain Alfa</option>
-                    <option value="domainKilo">Domain Kilo</option>
-                    <option value="domainZulu">Domain Zulu</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="section__form">
-            <label class="section__form__header" for="joinDomain">Join Domain</label>
-            <!-- <div class="switch">
-                <input type="radio" class="switch-input" name="joinDomain" value="joinDomainNo" id="joinDomainNo" checked>
-                <label for="joinDomainNo" class="switch-label switch-label-off">Yes</label>
-
-                <input type="radio" class="switch-input" name="joinDomain" value="joinDomainYes" id="joinDomainYes">
-                <label for="joinDomainYes" class="switch-label switch-label-on">No</label>
-                <span class="switch-selection"></span>
-            </div> -->
-            <div class="section__form__select">
-                <div class="switch--off">
-                    <input type="radio" class="switch-input" name="view" value="week" id="week" checked>
-                    <label for="week" class="switch-label switch-label-off">Yes</label>
-
-                    <input type="radio" class="switch-input" name="view" value="month" id="month">
-                    <label for="month" class="switch-label switch-label-on">No</label>
-                    <span class="switch-selection"></span>
+            <h3 class="modal__sub-header">Fixed Attributes</h3>
+            <div class="section__form">
+                <label class="section__form__header" for="dataCenter">Data Center:</label>
+                <div class="section__form__select">
+                    <select id="dataCenter" name="city">
+                        <option value="sanFrancisco">San Francisco</option>
+                        <option value="newYork">New York</option>
+                        <option value="seattle">Seattle</option>
+                        <option value="portland">Portland</option>
+                    </select>
                 </div>
             </div>
-        </div>   
+
+            <div class="section__form">
+                <label class="section__form__header" for="desktopModel">Desktop Model:</label>
+                <div class="section__form__select">
+                    <select id="desktopModel" name="model">
+                        <option value="standard">Standard <i class="muted">(2Gb Memory, 1 CPU)</i></option>
+                        <option value="turbo">Turbo <span class="muted">(4Gb Memory, 2 CPU)</span></option>
+                        <option value="twinTurbo">Twin Turbo <span class="muted">(8Gb Memory, 2.8 CPU)</span></option>
+                    </select>
+                </div>
+            </div>    
+
+            <div class="section__form">
+                <label class="section__form__header" for="domain">Domain:</label>
+                <div class="section__form__select">
+                    <select id="domain" name="domain">
+                        <option value="domainAlfa">Domain Alfa</option>
+                        <option value="domainKilo">Domain Kilo</option>
+                        <option value="domainZulu">Domain Zulu</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section__form">
+                <label class="section__form__header" for="joinDomain">Join Domain:</label>
+                <!-- <div class="switch">
+                    <input type="radio" class="switch-input" name="joinDomain" value="joinDomainNo" id="joinDomainNo" checked>
+                    <label for="joinDomainNo" class="switch-label switch-label-off">Yes</label>
+
+                    <input type="radio" class="switch-input" name="joinDomain" value="joinDomainYes" id="joinDomainYes">
+                    <label for="joinDomainYes" class="switch-label switch-label-on">No</label>
+                    <span class="switch-selection"></span>
+                </div> -->
+                <div class="section__form__select">
+                    <div class="switch--off">
+                        <input type="radio" class="switch-input" name="view" value="week" id="week" checked>
+                        <label for="week" class="switch-label switch-label-off">Yes</label>
+
+                        <input type="radio" class="switch-input" name="view" value="month" id="month">
+                        <label for="month" class="switch-label switch-label-on">No</label>
+                        <span class="switch-selection"></span>
+                    </div>
+                </div>
+            </div>   
            
-
-
-
-
-            <button type="reset" value="Cancel">Cancel</button>
-            <button type="submit" value="Save">Save</button>
-            <a href="javascript:void(0)">Back</a>
-            <a href="javascript:void(0)">Next</a>
+            <div class="section__form__actions">
+                <button type="reset" value="Cancel" class="btn--disabled" disabled>Cancel</button>
+                <span class="to-right">
+                    <button type="submit" value="Save" class="btn">Save</button>
+                    <a href="javascript:void(0)" class="btn">< Back</a>
+                    <a href="javascript:void(0)" class="btn">Next ></a>
+                </span>
+            </div>
         </form>
     </div>
 </div>

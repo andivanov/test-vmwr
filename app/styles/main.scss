@@ -42,6 +42,42 @@ body {
 }
 
 
+.btn {
+    cursor: pointer;
+    background: #fff;
+    color: #919FAA;
+    display: inline-block;
+    padding: .5em 1em;
+    border: 1px solid;
+    border-color: #C6D1D5; 
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+    @include border-radius(3px);
+    @include transition(all 0.1s ease-in-out);
+    &:hover,
+    &:focus {
+        background: #6CB33E;
+        border-color: #94C775;
+        color: #fff;    
+    }
+    &:active {
+        background: #6CB33E;
+        box-shadow: 0 1px 2px rgba(0,0,0, .2) inset;
+    }
+    &--disabled {
+        @extend .btn;
+        background: #DEE2E7;
+        border-color: #E6E9ED;
+        color: #414A55;
+        cursor: disabled;
+        &:hover {
+            @extend .btn--disabled;
+        }
+    }
+}
+
+
 .hidden {    
     display: none;
 }
@@ -51,6 +87,12 @@ body {
         margin-left: -5px;
     }
 }
+
+.to-right {
+    float: right;
+    overflow: hidden;
+}
+
     
 .modal {
     &__main-header {
@@ -121,6 +163,7 @@ body {
             display: inline-block;
             background-repeat: no-repeat;
             position: relative;
+            @include transition(all 0.1s ease-in-out);
             &--dedicated {
                 @extend .section__vmType__details;
                 background-image: url(../images/Desktop_Dedicated_Off_65p.png);
@@ -186,15 +229,23 @@ input[type=radio]:checked + label.section__vmType__details {
 
 .section {
     &__form {
+      margin-bottom: 14px;
         &__header{
             display: inline-block;
             width: 166px;
             color: #697785;
             text-indent: 26px;
+            vertical-align: top;
+            line-height: 25px;
         }
         &__select {
             width: 300px;
             display: inline-block;
+        }
+        &__actions {
+            border-top: 1px solid #C6D1D5;
+            padding-top: 20px;
+            margin-top: 29px; //+1px border
         }
     }
 }
@@ -211,8 +262,9 @@ input[type=radio]:checked + label.section__vmType__details {
 
 
 
+
 .modal {
-    @include opacity(1);
+    @include opacity(0);
     visibility: hidden;
     position: fixed;
     top: 0;
@@ -221,8 +273,16 @@ input[type=radio]:checked + label.section__vmType__details {
     left: 0;
     text-align: left;
     background: rgba(0,0,0, .7);
-    @include transition(opacity 0.25s ease-in-out);
+    @include transition(all 0.25s ease-in-out);
 }
+
+.modal-state:checked + .modal {
+    @include opacity(1);
+    visibility: visible;
+}
+
+
+
 
 .modal__bg {
   position: absolute;
@@ -237,11 +297,6 @@ input[type=radio]:checked + label.section__vmType__details {
     display: none;
 }
 
-.modal-state:checked + .modal {
-    @include opacity(1);
-    visibility: visible;
-}
-
 .modal-state:checked + .modal .modal__inner {
     top: 0;
 }
@@ -249,7 +304,7 @@ input[type=radio]:checked + label.section__vmType__details {
 .modal__inner {
   //@include transition(top 0.35s ease-in-out);
   position: absolute;
-  top: -20%;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -263,61 +318,44 @@ input[type=radio]:checked + label.section__vmType__details {
 }
 
 .modal__close {
-  position: absolute;
-  right: 1em;
-  top: 1em;
-  width: 1.1em;
-  height: 1.1em;
-  cursor: pointer;
+    position: absolute;
+    right: 24px;
+    top: 19px;
+    width: 20px;
+    height: 15px;
+    cursor: pointer;
+    vertical-align: middle;
+    @include transition(all 0.25s ease-in-out);
+    &:after {
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 20px;
+        background: #B1C0CC;
+        display: block;
+        transform: rotate(45deg);
+        left: 50%;
+        margin: -3px 0 0 -1px;
+        top: 0;
+    }
+    &:before {
+        @extend .modal__close:after;    
+        transform: rotate(-45deg);
+    }
+    &:hover {
+        @include rotate(90deg);  
+        &:after {
+            background: darken(#B1C0CC, 10%);
+        
+        }
+        &:before {
+            background: darken(#B1C0CC, 10%);
+        }
+    }
 }
 
-.modal__close:after,
-.modal__close:before {
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 1.5em;
-  background: #ccc;
-  display: block;
-  transform: rotate(45deg);
-  left: 50%;
-  margin: -3px 0 0 -1px;
-  top: 0;
-}
-
-.modal__close:hover:after,
-.modal__close:hover:before {
-  background: #aaa;
-}
-
-.modal__close:before {
-  transform: rotate(-45deg);
-}
-
-
-
-/* Other
- * =============================== */
 
 
 
 
-.btn {
-  cursor: pointer;
-  background: #27ae60;
-  display: inline-block;
-  padding: .5em 1em;
-  color: #fff;
-  border-radius: 3px;
-}
-
-.btn:hover,
-.btn:focus {
-  background: #2ecc71;
-}
-
-.btn:active {
-  background: #27ae60;
-  box-shadow: 0 1px 2px rgba(0,0,0, .2) inset;
-}
 
