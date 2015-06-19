@@ -1,14 +1,11 @@
 .selectbox  {
-    //($select-width, $select-height, $select-btn-width, $select-btn-picture)
-    //.inlineblock;
     margin-left: 3px;
 
     &.opened {
         .selectbox__display {
             padding-bottom: 1px;
-
             &:hover {
-                background: #6DB33E;
+                background: $button-active-bg;
             }
         }
 
@@ -17,14 +14,13 @@
         }
     }
 
-
     .selectbox__inner {
         position: relative;
     }
 
     .selectbox__display {
         border: 1px solid #B3BCC6;
-        background: #ffffff;
+        background: $white;
         cursor: pointer;
         overflow: hidden;
         position: relative;
@@ -47,13 +43,13 @@
             @include rotate(135deg);
         }
         &:hover {
-            border-color: #B9DAA7;
-            background: #6CB33E;
+            border-color: $button-active-border;
+            background: $button-active-bg;
             .selectbox__title-text {
-                color: #fff;
+                color: $white;
             }
             &:after {
-                border-color: #fff;
+                border-color: $white;
             }
              &:active {
                 @include box-shadow($button-box-shadow);
@@ -86,18 +82,12 @@
         position: absolute;
     }
 
-    .selectbox__btn-icon {
-        // width: $select-btn-width;
-        // height: $select-height;
-        // background: $select-btn-picture center center no-repeat;
-    }
-
     .selectbox__dropdown {
         position: absolute;
         top: 100%;
         left: 0px;
         right: 0px;
-        background: #ffffff;
+        background: $white;
         border: 1px solid #B1C0CC;
         overflow: hidden;
         display: none;
@@ -107,7 +97,7 @@
     .selectbox__dropdown-item {
         &.selected {
             .selectbox__item-link {
-                background: #fff;
+                background: $white;
                 &:hover {
                     background: #DAEBCF;
                 }

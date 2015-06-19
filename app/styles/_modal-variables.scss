@@ -4,16 +4,31 @@ $tabs-font-size:        11px;
 $copy-font-size:        14px;
 
 
+$white: 				#fff;
+$brand-green: 			#6CB33E;
+
 $copy-color-light: 		#5E6E7D;
 $copy-color-dark: 		#434B57;
 $border-color: 			#D5DDE1;
 
 $disabled-state:  		#91A0AA;
-$active-state: 			#6db33f;
+$active-state: 			$brand-green;
 $available-state: 		#3a87c5;
 
 
-$select-box-height: 	26px;
+$button-default-bg: 	$white;
+$button-default-border: #C6D1D5;
+$button-default-text: 	#919FAA;
+
+$button-active-bg: 		$brand-green;
+$button-active-border: 	#94C775;
+$button-active-text: 	$white;
+
+$button-disabled-bg: 	#DEE2E7;
+$button-disabled-border:#E6E9ED;
+$button-disabled-text: 	#414A55;
 
 $button-box-shadow: 	inset 0 3px 5px rgba(0, 0, 0, 0.1);
 $button-text-shadow:  	0 1px 1px rgba(0, 0, 0, 0.2);
+
+$select-box-height: 	26px;

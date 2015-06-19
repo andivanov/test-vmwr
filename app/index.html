@@ -13,12 +13,11 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -97,12 +96,12 @@
                 <label class="section__form__header" for="joinDomain">Join Domain:</label>
                 <div class="section__form__select">
                     <div class="switch">
-                        <input type="radio" class="switch-input" name="joinDomain" value="joinDomainYes" id="joinDomainYes" checked>
-                        <label for="joinDomainYes" class="switch-label switch-label-off">Yes</label>
+                        <input type="radio" class="switch__input" name="joinDomain" value="joinDomainYes" id="joinDomainYes" checked>
+                        <label for="joinDomainYes" class="switch__label switch__label--off">Yes</label>
 
-                        <input type="radio" class="switch-input" name="joinDomain" value="joinDomainNo" id="joinDomainNo">
-                        <label for="joinDomainNo" class="switch-label switch-label-on">No</label>
-                        <span class="switch-selection"></span>
+                        <input type="radio" class="switch__input" name="joinDomain" value="joinDomainNo" id="joinDomainNo">
+                        <label for="joinDomainNo" class="switch__label switch__label--on">No</label>
+                        <span class="switch__selection"></span>
                     </div>
                 </div>
             </div>   
@@ -129,13 +128,12 @@
     <!-- endbuild -->
 
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="bower_components/simple-select/jquery.simpleselect.js"></script>
-        <script src="scripts/main.js"></script>
-        <script>
-            $("select").simpleSelect();
-        </script>
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
 
-        <!-- endbuild -->
+    <script>
+        $("select").simpleSelect();
+    </script>
 </body>
 </html>

@@ -3,11 +3,10 @@
 
 @import "compass";
 @import "../bower_components/meyer-reset/stylesheets/meyer-reset";
-//@import "../bower_components/jquery.selectBoxIt/src/stylesheets/jquery.selectBoxIt";
 
 @import "modal-variables";
 @import "modal-select";
-@import "modal-checkbox";
+@import "modal-switch";
 
 
 
@@ -44,12 +43,12 @@ body {
 
 .btn {
     cursor: pointer;
-    background: #fff;
-    color: #919FAA;
+    background: $button-default-bg;
+    color: $button-default-text;
     display: inline-block;
-    padding: .5em 1em;
+    padding: 6px 1em;
     border: 1px solid;
-    border-color: #C6D1D5; 
+    border-color: $button-default-border; 
     font-size: 14px;
     line-height: 1;
     text-decoration: none;
@@ -57,21 +56,20 @@ body {
     @include transition(all 0.05s ease-in-out);
     &:hover,
     &:focus {
-        background: #6CB33E;
-        border-color: #94C775;
-        color: #fff;    
+        background: $brand-green;
+        border-color: $button-active-border;
+        color: $button-active-text;    
     }
     &:active {
-        background: #6CB33E;
+        background: $brand-green;
         @include box-shadow($button-box-shadow);
         @include text-shadow($button-text-shadow);
-        //text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
     }
     &--disabled {
         @extend .btn;
-        background: #DEE2E7;
-        border-color: #E6E9ED;
-        color: #414A55;
+        background: $button-disabled-bg;
+        border-color: $button-disabled-border;
+        color: $button-disabled-text;
         cursor: not-allowed;
         &:hover {
             @extend .btn--disabled;
@@ -100,6 +98,10 @@ body {
 .to-right {
     float: right;
     overflow: hidden;
+    .btn:nth-of-type(1) {
+        margin-left: 0;
+        margin-right: 6px;
+    }
 }
 
     
@@ -321,7 +323,7 @@ input[type=radio]:checked + label.section__vmType__details {
   margin: auto;
   overflow: auto;
   background: #fff;
-  padding: 16px 30px 20px;
+  padding: 20px 30px 0;
   height: 540px;
   width: 722px;
   @include box-shadow(0 0 10px rgba(0, 0, 0, 0.5));
